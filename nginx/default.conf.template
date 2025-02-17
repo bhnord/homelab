@@ -1,0 +1,43 @@
+server {
+    listen 80;
+    server_name _;
+    location / {
+	return 301 https://$host$request_uri;
+    }
+}
+server {
+    listen 443 ssl;
+    server_name ${ACTUAL_SUBDOMAIN}.${NGINX_HOST};
+
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    location / {
+        proxy_pass http://${ACTUAL_HOST}:${ACTUAL_PORT};
+        proxy_http_version 1.1;
+    }
+}
+server {
+    listen 443 ssl;
+    server_name ${MEALIE_SUBDOMAIN}.${NGINX_HOST};
+
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    location / {
+        proxy_pass http://${MEALIE_HOST}:${MEALIE_PORT};
+        proxy_http_version 1.1;
+    }
+}
+server {
+    listen 443 ssl;
+    server_name ${PAPERLESS_SUBDOMAIN}.${NGINX_HOST};
+
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+
+    location / {
+        proxy_pass http://${PAPERLESS_HOST}:${PAPERLESS_PORT};
+        proxy_http_version 1.1;
+    }
+}
