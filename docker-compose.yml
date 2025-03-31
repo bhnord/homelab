@@ -1,8 +1,8 @@
 include:
-  - ./actualbudget/docker-compose.yml
-  - ./mealie/docker-compose.yml
-  - ./paperless/docker-compose.yml
-  - ./glance/docker-compose.yml
+  - ./actualbudget/docker-compose.yml   # actual
+  - ./mealie/docker-compose.yml         # mealie
+  - ./paperless/docker-compose.yml      # paperless
+  - ./glance/docker-compose.yml         # glance
 
 services:
   nginx:
@@ -21,3 +21,4 @@ services:
       - actual
       - mealie
       - paperless
+      - glance

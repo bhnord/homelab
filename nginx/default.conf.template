@@ -18,7 +18,7 @@ server {
 }
 server {
     listen 443 ssl;
-    server_name ${MEALIE_SUBDOMAIN}.${NGINX_HOST};
+    server_name ${MEALIE_SUBDOMAIN}.${NGINX_HOST} ${MEALIE_SUBDOMAIN}.${WEB_HOST};
 
     ssl_certificate /etc/nginx/ssl/server.crt;
     ssl_certificate_key /etc/nginx/ssl/server.key;
@@ -30,7 +30,7 @@ server {
 }
 server {
     listen 443 ssl;
-    server_name ${ACTUAL_SUBDOMAIN}.${NGINX_HOST};
+    server_name ${ACTUAL_SUBDOMAIN}.${NGINX_HOST} ${ACTUAL_SUBDOMAIN}.${WEB_HOST};
 
     ssl_certificate /etc/nginx/ssl/server.crt;
     ssl_certificate_key /etc/nginx/ssl/server.key;
@@ -42,7 +42,7 @@ server {
 }
 server {
     listen 443 ssl;
-    server_name ${PAPERLESS_SUBDOMAIN}.${NGINX_HOST};
+    server_name ${PAPERLESS_SUBDOMAIN}.${NGINX_HOST} ${PAPERLESS_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 20M;
 
     ssl_certificate /etc/nginx/ssl/server.crt;
@@ -55,7 +55,7 @@ server {
 }
 server {
     listen 443 ssl;
-    server_name ${GLANCE_SUBDOMAIN}.${NGINX_HOST};
+    server_name ${GLANCE_SUBDOMAIN}.${NGINX_HOST} ${GLANCE_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 20M;
 
     ssl_certificate /etc/nginx/ssl/server.crt;
