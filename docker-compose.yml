@@ -3,6 +3,7 @@ include:
   - ./mealie/docker-compose.yml         # mealie
   - ./paperless/docker-compose.yml      # paperless
   - ./glance/docker-compose.yml         # glance
+  - ./immich/docker-compose.yml         # immich
 
 services:
   nginx:
