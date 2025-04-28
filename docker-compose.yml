@@ -1,9 +1,11 @@
+---
 include:
   - ./actualbudget/docker-compose.yml   # actual
   - ./mealie/docker-compose.yml         # mealie
   - ./paperless/docker-compose.yml      # paperless
   - ./glance/docker-compose.yml         # glance
   - ./immich/docker-compose.yml         # immich
+  - ./chibisafe/docker-compose.yml          # chibi
 
 services:
   nginx:
@@ -23,3 +25,4 @@ services:
       - mealie
       - paperless
       - glance
+      - chibi
