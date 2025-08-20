@@ -1,0 +1,117 @@
+- name: Home
+  # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+  hide-desktop-navigation: true
+  columns:
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+
+        - type: rss
+          title: self hosted
+          limit: 10
+          collapse-after: 3
+          cache: 12h
+          feeds:
+            - url: https://selfh.st/rss/
+              title: selfh.st
+            - url: https://ciechanow.ski/atom.xml
+            - url: https://www.joshwcomeau.com/rss.xml
+              title: Josh Comeau
+            - url: https://samwho.dev/rss.xml
+            - url: https://ishadeed.com/feed.xml
+              title: Ahmad Shadeed
+
+        - type: rss
+          title: bloomberg
+          limit: 10
+          collapse-after: 3
+          cache: 1h
+          feeds:
+            - url: https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en
+              title: bloomberg
+
+        - type: twitch-top-games
+          exclude:
+            - just-chatting
+            - pools-hot-tubs-and-beaches
+            - music
+            - art
+            - asmr
+
+    - size: full
+      widgets:
+        - type: group
+          widgets:
+            - type: hacker-news
+            - type: lobsters
+
+        # YouTube
+        - type: videos
+          channels:
+            - UCsBjURrPoezykLs9EqgamOA # Fireship
+            - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+            - UCfMJ2MchTSW2kWaT0kK94Yw # William Osman
+            - UCxr2d4As312LulcajAkKJYw # Townsends
+            - UCsaGKqPZnGp_7N80hcHySGQ # Tasting History
+
+        - type: group
+          widgets:
+            - type: reddit
+              subreddit: cybersecurity
+              show-thumbnails: true
+            - type: reddit
+              subreddit: technology
+              show-thumbnails: true
+            - type: reddit
+              subreddit: selfhosted
+              show-thumbnails: true
+            - type: reddit
+              subreddit: quincyma
+              show-thumbnails: true
+
+    - size: small
+      widgets:
+        - type: weather
+          location: Quincy, Massachusetts, USA
+          units: imperial # alternatively "imperial"
+          hour-format: 12h # alternatively "24h"
+          # Optionally hide the location from being displayed in the widget
+          # hide-location: true
+
+        - type: markets
+          chart-link-template: https://www.tradingview.com/chart/?symbol={SYMBOL}
+          symbol-link-template: https://www.tradingview.com/chart/?symbol={SYMBOL}
+          markets:
+            - symbol: PINS
+              name: Pinterest
+            - symbol: DELL
+              name: Dell
+            - symbol: SPY
+              name: S&P 500
+            - symbol: AMZN
+              name: Amazon
+            - symbol: NVDA
+              name: NVIDIA
+            - symbol: AAPL
+              name: Apple
+            - symbol: MSFT
+              name: Microsoft
+
+        - type: server-stats
+          servers:
+            - type: local
+              name: Server
+
+        - type: releases
+          cache: 1d
+          # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+          # read-only token from your Github account settings and use it here to increase the limit.
+          # token: ...
+          repositories:
+            - glanceapp/glance
+            - actualbudget/actual
+            - paperless-ngx/paperless-ngx
+            - mealie-recipes/mealie
+            - immich-app/immich
+            - syncthing/syncthing
