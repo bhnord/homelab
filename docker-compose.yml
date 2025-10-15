@@ -5,7 +5,8 @@ include:
   - ./paperless/docker-compose.yml      # paperless
   - ./glance/docker-compose.yml         # glance
   - ./immich/docker-compose.yml         # immich
-  - ./chibisafe/docker-compose.yml          # chibi
+  - ./chibisafe/docker-compose.yml      # chibi
+  - ./omni-tools/docker-compose.yml     # tools
 
 services:
   nginx:
@@ -26,3 +27,4 @@ services:
       - paperless
       - glance
       - chibi
+      - tools

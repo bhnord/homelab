@@ -1,0 +1,5 @@
+services:
+  tools:
+    image: iib0011/omni-tools:latest
+    container_name: ${TOOLS_HOST}
+    restart: unless-stopped
