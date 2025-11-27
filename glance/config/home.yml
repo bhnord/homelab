@@ -28,8 +28,6 @@
           collapse-after: 4
           cache: 1h
           feeds:
-            - url: https://news.google.com/rss/search?q=when:24h+allinurl:bloomberg.com&hl=en-US&gl=US&ceid=US:en
-              title: bloomberg
             - url: https://rsshub.app/apnews/topics/apf-topnews
               title: AP
 
