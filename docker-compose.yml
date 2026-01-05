@@ -1,12 +1,13 @@
 ---
 include:
-  - ./actualbudget/docker-compose.yml   # actual
-  - ./mealie/docker-compose.yml         # mealie
-  - ./paperless/docker-compose.yml      # paperless
-  - ./glance/docker-compose.yml         # glance
-  - ./immich/docker-compose.yml         # immich
-  - ./chibisafe/docker-compose.yml      # chibi
-  - ./omni-tools/docker-compose.yml     # tools
+  - ./actualbudget/docker-compose.yml   # actual - budgeting
+  - ./mealie/docker-compose.yml         # mealie - recipes
+  - ./paperless/docker-compose.yml      # paperless - documents
+  - ./glance/docker-compose.yml         # glance - dashboard
+  - ./immich/docker-compose.yml         # immich - img host
+  - ./chibisafe/docker-compose.yml      # chibi - file host
+  - ./omni-tools/docker-compose.yml     # tools - multi tools
+  - ./silverbullet/docker-compose.yml   # bullet - .md editor
 
 services:
   nginx:
@@ -28,3 +29,4 @@ services:
       - glance
       - chibi
       - tools
+      - bullet

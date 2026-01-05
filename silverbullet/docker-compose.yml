@@ -1,0 +1,11 @@
+services:
+  bullet:
+    image: ghcr.io/silverbulletmd/silverbullet
+    container_name: bullet
+    restart: unless-stopped
+    environment:
+    - SB_USER=admin:admin
+    volumes:
+      - ./files:/space
+    ports:
+      - 3000:3000
