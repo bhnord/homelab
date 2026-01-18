@@ -1,0 +1,11 @@
+docker run -it --rm -p 80:80 -v ./nginx/ssl:/etc/letsencrypt certbot/certbot certonly \
+	--non-interactive \
+	--standalone \
+	--agree-tos \
+	--email bernhard@bhnord.com \
+	-d glance.bhnord.com \
+	-d mealie.bhnord.com \
+	-d paperless.bhnord.com \
+	-d chibi.bhnord.com \
+	-d bullet.bhnord.com \
+	-d tools.bhnord.com
