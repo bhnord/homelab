@@ -8,8 +8,8 @@ server {
 server {
     listen 443 ssl;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${MEALIE_HOST}:${MEALIE_PORT};
@@ -20,8 +20,8 @@ server {
     listen 443 ssl;
     server_name ${MEALIE_SUBDOMAIN}.${NGINX_HOST} ${MEALIE_SUBDOMAIN}.${WEB_HOST};
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${MEALIE_HOST}:${MEALIE_PORT};
@@ -32,8 +32,8 @@ server {
     listen 443 ssl;
     server_name ${ACTUAL_SUBDOMAIN}.${NGINX_HOST} ${ACTUAL_SUBDOMAIN}.${WEB_HOST};
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${ACTUAL_HOST}:${ACTUAL_PORT};
@@ -45,8 +45,8 @@ server {
     server_name ${PAPERLESS_SUBDOMAIN}.${NGINX_HOST} ${PAPERLESS_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 20M;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${PAPERLESS_HOST}:${PAPERLESS_PORT};
@@ -58,8 +58,8 @@ server {
     server_name ${GLANCE_SUBDOMAIN}.${NGINX_HOST} ${GLANCE_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 20M;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${GLANCE_HOST}:${GLANCE_PORT};
@@ -71,8 +71,8 @@ server {
     server_name ${IMMICH_SUBDOMAIN}.${NGINX_HOST} ${IMMICH_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 20M;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${IMMICH_HOST}:${IMMICH_PORT};
@@ -84,8 +84,8 @@ server {
     server_name ${CHIBI_SUBDOMAIN}.${NGINX_HOST} ${CHIBI_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 200M;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${CHIBI_HOST}:${CHIBI_PORT};
@@ -103,8 +103,8 @@ server {
     server_name ${TOOLS_SUBDOMAIN}.${NGINX_HOST} ${TOOLS_SUBDOMAIN}.${WEB_HOST};
     client_max_body_size 200M;
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${TOOLS_HOST}:${TOOLS_PORT};
@@ -121,8 +121,8 @@ server {
     listen 443 ssl;
     server_name ${BULLET_SUBDOMAIN}.${NGINX_HOST} ${BULLET_SUBDOMAIN}.${WEB_HOST};
 
-    ssl_certificate /etc/nginx/ssl/server.crt;
-    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_certificate /etc/nginx/ssl/live/glance.bhnord.com/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/glance.bhnord.com/privkey.pem;
 
     location / {
         proxy_pass http://${BULLET_HOST}:${BULLET_PORT};

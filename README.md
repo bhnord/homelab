@@ -7,4 +7,3 @@ note that the `<APP>_PORT` variable refers to the port the app runs on INSIDE of
 ## Apps
 Each subfolder is one docker container. In each subolder, there is a `files` folder.
 This should be a link file to where all of the persistent storage is. 
-

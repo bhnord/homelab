@@ -18,7 +18,8 @@ services:
     working_dir: /etc/nginx/templates
     volumes:
       - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template
-      - ./ssl:/etc/nginx/ssl
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/certbot-webroot:/var/www/certbot
     ports:
       - "80:80"
       - "443:443"

@@ -2,7 +2,7 @@
 paperless/*/**
 
 # don't commit ssl files
-ssl/*
+ssl/
 
 # this is where all the container volumes are 
 **/files
