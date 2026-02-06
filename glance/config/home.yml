@@ -67,6 +67,9 @@
               subreddit: cybersecurity
               show-thumbnails: true
             - type: reddit
+              subreddit: maker
+              show-thumbnails: true
+            - type: reddit
               subreddit: malden
               show-thumbnails: true
 
