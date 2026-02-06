@@ -58,16 +58,16 @@
         - type: group
           widgets:
             - type: reddit
-              subreddit: cybersecurity
-              show-thumbnails: true
-            - type: reddit
               subreddit: technology
               show-thumbnails: true
             - type: reddit
               subreddit: selfhosted
               show-thumbnails: true
             - type: reddit
-              subreddit: quincyma
+              subreddit: cybersecurity
+              show-thumbnails: true
+            - type: reddit
+              subreddit: malden
               show-thumbnails: true
 
     - size: small
@@ -97,6 +97,11 @@
               name: Apple
             - symbol: MSFT
               name: Microsoft
+
+        - type: iframe
+          title: ToDo
+          source: https://bullet.bhnord.com/Lists/Todos/When%20You%20Can
+          height: 400
 
         - type: server-stats
           servers:
