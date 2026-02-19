@@ -76,7 +76,7 @@
     - size: small
       widgets:
         - type: weather
-          location: Quincy, Massachusetts, USA
+          location: Melrose, Massachusetts, USA
           units: imperial # alternatively "imperial"
           hour-format: 12h # alternatively "24h"
           # Optionally hide the location from being displayed in the widget
