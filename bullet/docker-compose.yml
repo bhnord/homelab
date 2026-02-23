@@ -4,7 +4,7 @@ services:
     container_name: bullet
     restart: unless-stopped
     environment:
-    - SB_USER=admin:admin
+    - SB_AUTH=none
     volumes:
       - ./files:/space
     ports:

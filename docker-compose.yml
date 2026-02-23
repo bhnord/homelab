@@ -7,7 +7,7 @@ include:
   - ./immich/docker-compose.yml         # immich - img host
   - ./chibisafe/docker-compose.yml      # chibi - file host
   - ./omni-tools/docker-compose.yml     # tools - multi tools
-  - ./silverbullet/docker-compose.yml   # bullet - .md editor
+  - ./bullet/docker-compose.yml   # bullet - .md editor
 
 services:
   nginx:
