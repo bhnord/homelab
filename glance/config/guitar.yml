@@ -1,0 +1,25 @@
+- name: Guitar
+  # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+  hide-desktop-navigation: false
+  columns:
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+
+    - size: full
+      widgets:
+        - type: videos
+          style: grid-cards
+          channels:
+            - UC9cvVvlvr-qBssphm1EdYGQ # Andy Guitar
+            - UCcZd_G62wtsCXd-b7OhQdlw # Justin Guitar
+        
+    - size: small
+      widgets:
+        - type: calendar
+          first-day-of-week: monday
+       
+        - type: html
+          source: |
+             <p>Hello, <span class="color-primary">World</span>!</p>

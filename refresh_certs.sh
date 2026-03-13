@@ -9,4 +9,5 @@ docker run -it --rm -v ./nginx/ssl:/etc/letsencrypt certbot/certbot certonly \
 	-d paperless.bhnord.com \
 	-d chibi.bhnord.com \
 	-d bullet.bhnord.com \
-	-d tools.bhnord.com
+	-d tools.bhnord.com \
+	-d track.bhnord.com
