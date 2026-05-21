@@ -4,6 +4,7 @@ docker run -it --rm -v ./nginx/ssl:/etc/letsencrypt certbot/certbot certonly \
 	--agree-tos \
 	--email bernhard@bhnord.com \
 	--preferred-challenges dns \
+	--cert-name bhnord.com
 	-d glance.bhnord.com \
 	-d mealie.bhnord.com \
 	-d paperless.bhnord.com \
