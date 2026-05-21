@@ -1,0 +1,69 @@
+- name: News
+  # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+  hide-desktop-navigation: false
+  columns:
+    - size: small
+      widgets:
+        - type: group
+          widgets:
+            - type: reddit
+              subreddit: breakingnews
+              show-thumbnails: false
+            - type: reddit
+              subreddit: worldnews
+              show-thumbnails: false
+
+
+    - size: full
+      widgets:
+        - type: group
+          widgets:
+            - type: rss
+              title: ArsTechnica
+              limit: 20
+              collapse-after: 8
+              cache: 1h
+              feeds:
+                - url: https://feeds.arstechnica.com/arstechnica/technology-lab
+                  title: Information Technology
+                - url: https://feeds.arstechnica.com/arstechnica/tech-policy
+                  title: Civilization & Discontents
+                - url: https://feeds.arstechnica.com/arstechnica/apple
+                  title:  Apple Ecosystem
+                - url: https://feeds.arstechnica.com/arstechnica/science
+                  title: Science & Exploration
+            - type: rss
+              title: Reuters
+              limit: 20
+              collapse-after: 8
+              cache: 1h
+              feeds:
+                - url: https://news.google.com/rss/search?q=site:reuters.com&hl=en-US&gl=US&ceid=US:en
+                  title: Reuters
+            - type: rss
+              title: AP
+              limit: 20
+              collapse-after: 8
+              cache: 1h
+              feeds:
+                - url: https://news.google.com/rss/search?q=site:apnews.com&h1=en-US&gl=US&ceid=US:en&hl=en-US
+                  title: AP
+
+    - size: small
+      widgets:
+        - type: markets
+          chart-link-template: https://www.tradingview.com/chart/?symbol={SYMBOL}
+          symbol-link-template: https://www.tradingview.com/chart/?symbol={SYMBOL}
+          markets:
+            - symbol: SPY
+              name: S&P 500
+            - symbol: PINS
+              name: Pinterest
+            - symbol: AMZN
+              name: Amazon
+            - symbol: AAPL
+              name: Apple
+            - symbol: NVDA
+              name: NVIDIA
+            - symbol: MSFT
+              name: Microsoft

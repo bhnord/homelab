@@ -4,9 +4,13 @@
   columns:
     - size: small
       widgets:
-        - type: calendar
-          first-day-of-week: monday
-
+        - type: weather
+          location: Melrose, Massachusetts, USA
+          units: imperial # alternatively "imperial"
+          hour-format: 12h # alternatively "24h"
+          # Optionally hide the location from being displayed in the widget
+          # hide-location: true
+          
         - type: rss
           title: self hosted
           limit: 10
@@ -21,15 +25,6 @@
             - url: https://samwho.dev/rss.xml
             - url: https://ishadeed.com/feed.xml
               title: Ahmad Shadeed
-
-        - type: rss
-          title: News
-          limit: 10
-          collapse-after: 4
-          cache: 1h
-          feeds:
-            - url: https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com
-              title: AP
 
         - type: twitch-top-games
           exclude:
@@ -75,31 +70,6 @@
 
     - size: small
       widgets:
-        - type: weather
-          location: Melrose, Massachusetts, USA
-          units: imperial # alternatively "imperial"
-          hour-format: 12h # alternatively "24h"
-          # Optionally hide the location from being displayed in the widget
-          # hide-location: true
-
-        - type: markets
-          chart-link-template: https://www.tradingview.com/chart/?symbol={SYMBOL}
-          symbol-link-template: https://www.tradingview.com/chart/?symbol={SYMBOL}
-          markets:
-            - symbol: PINS
-              name: Pinterest
-            - symbol: DELL
-              name: Dell
-            - symbol: SPY
-              name: S&P 500
-            - symbol: AMZN
-              name: Amazon
-            - symbol: NVDA
-              name: NVIDIA
-            - symbol: AAPL
-              name: Apple
-            - symbol: MSFT
-              name: Microsoft
 
         - type: iframe
           title: ToDo
