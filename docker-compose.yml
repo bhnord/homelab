@@ -6,7 +6,7 @@ include:
   - ./glance/docker-compose.yml         # glance - dashboard
 #  - ./immich/docker-compose.yml         # immich - img host
   - ./chibisafe/docker-compose.yml      # chibi - file host
-  - ./omni-tools/docker-compose.yml     # tools - multi tools
+#  - ./omni-tools/docker-compose.yml     # tools - multi tools
   - ./bullet/docker-compose.yml         # bullet - .md editor
   - ./track/docker-compose.yml          # track - media tracker (watched, to watch, etc)
 
@@ -29,6 +29,6 @@ services:
       - paperless
       - glance
       - chibi
-      - tools
+#      - tools
       - bullet
       - track
