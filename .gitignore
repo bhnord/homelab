@@ -8,4 +8,4 @@ ssl/
 **/files
 
 # don't commit env secrets
-.env
+**/.env.secrets

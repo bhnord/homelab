@@ -16,10 +16,10 @@ services:
       context: ./caddy
       dockerfile: Dockerfile
     restart: always
-    container_name: ${NGINX_HOST}
+    container_name: ${PROXY_HOST}
     env_file: 
-      - .env.config
       - .env
+      - ./caddy/.env.secrets
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data

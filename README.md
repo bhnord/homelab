@@ -10,3 +10,19 @@ This should be a link file to where all of the persistent storage is.
 
 ## Samba Share:
 https://forums.raspberrypi.com/viewtopic.php?t=205379
+
+## Docker on SD Card:
+Run on External HDD
+SD cards wear out fast under Docker's constant writes.
+
+1. daemon.json: 
+```json
+{"data-root": "/mnt/ext_hdd/docker"}
+```
+2. docker.service.d/override.conf: 
+```
+[Unit]
+RequiresMountsFor=/mnt/ext_hdd
+```
+3. /etc/fstab: mount HDD by UUID=, with nofail
+4. daemon-reload + restart docker to apply
