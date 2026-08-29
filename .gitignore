@@ -6,3 +6,6 @@ ssl/
 
 # this is where all the container volumes are 
 **/files
+
+# don't commit env secrets
+.env
