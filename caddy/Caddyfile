@@ -21,21 +21,21 @@ glance.bhnord.com {
 # =========================================================================
 # Mealie
 # =========================================================================
-{$MEALIE_SUBDOMAIN}.{$NGINX_HOST}, {$MEALIE_SUBDOMAIN}.{$WEB_HOST} {
+{$MEALIE_SUBDOMAIN}.{$PROXY_HOST}, {$MEALIE_SUBDOMAIN}.{$WEB_HOST} {
 	reverse_proxy {$MEALIE_HOST}:{$MEALIE_PORT}
 }
 
 # =========================================================================
 # Actual Budget
 # =========================================================================
-{$ACTUAL_SUBDOMAIN}.{$NGINX_HOST}, {$ACTUAL_SUBDOMAIN}.{$WEB_HOST} {
+{$ACTUAL_SUBDOMAIN}.{$PROXY_HOST}, {$ACTUAL_SUBDOMAIN}.{$WEB_HOST} {
 	reverse_proxy {$ACTUAL_HOST}:{$ACTUAL_PORT}
 }
 
 # =========================================================================
 # Paperless-ngx
 # =========================================================================
-{$PAPERLESS_SUBDOMAIN}.{$NGINX_HOST}, {$PAPERLESS_SUBDOMAIN}.{$WEB_HOST} {
+{$PAPERLESS_SUBDOMAIN}.{$PROXY_HOST}, {$PAPERLESS_SUBDOMAIN}.{$WEB_HOST} {
 	request_body {
 		max_size 20MB
 	}
@@ -45,7 +45,7 @@ glance.bhnord.com {
 # =========================================================================
 # Glance
 # =========================================================================
-{$GLANCE_SUBDOMAIN}.{$NGINX_HOST}, {$GLANCE_SUBDOMAIN}.{$WEB_HOST} {
+{$GLANCE_SUBDOMAIN}.{$PROXY_HOST}, {$GLANCE_SUBDOMAIN}.{$WEB_HOST} {
 	request_body {
 		max_size 20MB
 	}
@@ -55,7 +55,7 @@ glance.bhnord.com {
 # =========================================================================
 # Immich (disabled — host on cloud or something instead)
 # =========================================================================
-# {$IMMICH_SUBDOMAIN}.{$NGINX_HOST}, {$IMMICH_SUBDOMAIN}.{$WEB_HOST} {
+# {$IMMICH_SUBDOMAIN}.{$PROXY_HOST}, {$IMMICH_SUBDOMAIN}.{$WEB_HOST} {
 # 	request_body {
 # 		max_size 20MB
 # 	}
@@ -65,7 +65,7 @@ glance.bhnord.com {
 # =========================================================================
 # Chibi
 # =========================================================================
-{$CHIBI_SUBDOMAIN}.{$NGINX_HOST}, {$CHIBI_SUBDOMAIN}.{$WEB_HOST} {
+{$CHIBI_SUBDOMAIN}.{$PROXY_HOST}, {$CHIBI_SUBDOMAIN}.{$WEB_HOST} {
 	request_body {
 		max_size 200MB
 	}
@@ -80,7 +80,7 @@ glance.bhnord.com {
 # =========================================================================
 # Tools
 # =========================================================================
-{$TOOLS_SUBDOMAIN}.{$NGINX_HOST}, {$TOOLS_SUBDOMAIN}.{$WEB_HOST} {
+{$TOOLS_SUBDOMAIN}.{$PROXY_HOST}, {$TOOLS_SUBDOMAIN}.{$WEB_HOST} {
 	request_body {
 		max_size 200MB
 	}
@@ -95,13 +95,13 @@ glance.bhnord.com {
 # =========================================================================
 # Bullet
 # =========================================================================
-{$BULLET_SUBDOMAIN}.{$NGINX_HOST}, {$BULLET_SUBDOMAIN}.{$WEB_HOST} {
+{$BULLET_SUBDOMAIN}.{$PROXY_HOST}, {$BULLET_SUBDOMAIN}.{$WEB_HOST} {
 	reverse_proxy {$BULLET_HOST}:{$BULLET_PORT}
 }
 
 # =========================================================================
 # Track
 # =========================================================================
-{$TRACK_SUBDOMAIN}.{$NGINX_HOST}, {$TRACK_SUBDOMAIN}.{$WEB_HOST} {
+{$TRACK_SUBDOMAIN}.{$PROXY_HOST}, {$TRACK_SUBDOMAIN}.{$WEB_HOST} {
 	reverse_proxy {$TRACK_HOST}:{$TRACK_PORT}
 }
