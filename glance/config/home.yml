@@ -62,7 +62,10 @@
               subreddit: cybersecurity
               show-thumbnails: true
             - type: reddit
-              subreddit: maker
+              subreddit: buildapcsales
+              show-thumbnails: true
+            - type: reddit
+              subreddit: wallstreetbets
               show-thumbnails: true
             - type: reddit
               subreddit: malden

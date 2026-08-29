@@ -1,0 +1,107 @@
+# =========================================================================
+# Global options
+# =========================================================================
+# Setting acme_dns here makes DNS-01 (via Cloudflare) the default challenge
+# method for every site below — no per-site `tls` block needed, and no
+# inbound port 80/443 access required. This is what lets it work behind
+# a VPN with no public inbound access.
+{
+	email {env.SSL_EMAIL}
+	acme_dns cloudflare {env.CF_API_TOKEN}
+}
+
+# =========================================================================
+# Default / catch-all
+#   (mirrors the nginx `server_name _;` block, which fell through to Mealie)
+# =========================================================================
+glance.bhnord.com {
+	reverse_proxy {$MEALIE_HOST}:{$MEALIE_PORT}
+}
+
+# =========================================================================
+# Mealie
+# =========================================================================
+{$MEALIE_SUBDOMAIN}.{$NGINX_HOST}, {$MEALIE_SUBDOMAIN}.{$WEB_HOST} {
+	reverse_proxy {$MEALIE_HOST}:{$MEALIE_PORT}
+}
+
+# =========================================================================
+# Actual Budget
+# =========================================================================
+{$ACTUAL_SUBDOMAIN}.{$NGINX_HOST}, {$ACTUAL_SUBDOMAIN}.{$WEB_HOST} {
+	reverse_proxy {$ACTUAL_HOST}:{$ACTUAL_PORT}
+}
+
+# =========================================================================
+# Paperless-ngx
+# =========================================================================
+{$PAPERLESS_SUBDOMAIN}.{$NGINX_HOST}, {$PAPERLESS_SUBDOMAIN}.{$WEB_HOST} {
+	request_body {
+		max_size 20MB
+	}
+	reverse_proxy {$PAPERLESS_HOST}:{$PAPERLESS_PORT}
+}
+
+# =========================================================================
+# Glance
+# =========================================================================
+{$GLANCE_SUBDOMAIN}.{$NGINX_HOST}, {$GLANCE_SUBDOMAIN}.{$WEB_HOST} {
+	request_body {
+		max_size 20MB
+	}
+	reverse_proxy {$GLANCE_HOST}:{$GLANCE_PORT}
+}
+
+# =========================================================================
+# Immich (disabled — host on cloud or something instead)
+# =========================================================================
+# {$IMMICH_SUBDOMAIN}.{$NGINX_HOST}, {$IMMICH_SUBDOMAIN}.{$WEB_HOST} {
+# 	request_body {
+# 		max_size 20MB
+# 	}
+# 	reverse_proxy {$IMMICH_HOST}:{$IMMICH_PORT}
+# }
+
+# =========================================================================
+# Chibi
+# =========================================================================
+{$CHIBI_SUBDOMAIN}.{$NGINX_HOST}, {$CHIBI_SUBDOMAIN}.{$WEB_HOST} {
+	request_body {
+		max_size 200MB
+	}
+	reverse_proxy {$CHIBI_HOST}:{$CHIBI_PORT} {
+		header_up Host {host}
+		header_up X-Forwarded-Host {host}
+		header_up X-Forwarded-For {remote}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}
+
+# =========================================================================
+# Tools
+# =========================================================================
+{$TOOLS_SUBDOMAIN}.{$NGINX_HOST}, {$TOOLS_SUBDOMAIN}.{$WEB_HOST} {
+	request_body {
+		max_size 200MB
+	}
+	reverse_proxy {$TOOLS_HOST}:{$TOOLS_PORT} {
+		header_up Host {host}
+		header_up X-Forwarded-Host {host}
+		header_up X-Forwarded-For {remote}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}
+
+# =========================================================================
+# Bullet
+# =========================================================================
+{$BULLET_SUBDOMAIN}.{$NGINX_HOST}, {$BULLET_SUBDOMAIN}.{$WEB_HOST} {
+	reverse_proxy {$BULLET_HOST}:{$BULLET_PORT}
+}
+
+# =========================================================================
+# Track
+# =========================================================================
+{$TRACK_SUBDOMAIN}.{$NGINX_HOST}, {$TRACK_SUBDOMAIN}.{$WEB_HOST} {
+	reverse_proxy {$TRACK_HOST}:{$TRACK_PORT}
+}

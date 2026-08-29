@@ -6,20 +6,24 @@ include:
   - ./glance/docker-compose.yml         # glance - dashboard
 #  - ./immich/docker-compose.yml         # immich - img host
   - ./chibisafe/docker-compose.yml      # chibi - file host
-#  - ./omni-tools/docker-compose.yml     # tools - multi tools
+  - ./omni-tools/docker-compose.yml     # tools - multi tools
   - ./bullet/docker-compose.yml         # bullet - .md editor
   - ./track/docker-compose.yml          # track - media tracker (watched, to watch, etc)
 
 services:
-  nginx:
-    image: nginx:alpine
+  caddy:
+    build:
+      context: ./caddy
+      dockerfile: Dockerfile
     restart: always
     container_name: ${NGINX_HOST}
-    env_file: .env
-    working_dir: /etc/nginx/templates
+    env_file: 
+      - .env.config
+      - .env
     volumes:
-      - ./nginx/default.conf.template:/etc/nginx/templates/default.conf.template
-      - ./nginx/ssl:/etc/nginx/ssl
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
     ports:
       - "80:80"
       - "443:443"
@@ -32,3 +36,9 @@ services:
 #      - tools
       - bullet
       - track
+ 
+volumes:
+  caddy_data:
+  caddy_config:
+ 
+
