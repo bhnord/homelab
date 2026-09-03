@@ -33,7 +33,9 @@ services:
       - ./files/media:/usr/src/paperless/media
       - ./export:/usr/src/paperless/export
       - ./consume:/usr/src/paperless/consume
-    env_file: ./docker-compose.env
+    env_file: 
+      - .env
+      - .env.secrets
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db

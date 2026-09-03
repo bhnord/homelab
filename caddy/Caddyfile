@@ -14,8 +14,8 @@
 # Default / catch-all
 #   (mirrors the nginx `server_name _;` block, which fell through to Mealie)
 # =========================================================================
-glance.bhnord.com {
-	reverse_proxy {$MEALIE_HOST}:{$MEALIE_PORT}
+:80, :443 {
+	respond 404
 }
 
 # =========================================================================

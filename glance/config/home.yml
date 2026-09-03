@@ -56,6 +56,9 @@
               subreddit: technology
               show-thumbnails: true
             - type: reddit
+              subreddit: localllama
+              show-thumbnails: true
+            - type: reddit
               subreddit: selfhosted
               show-thumbnails: true
             - type: reddit
