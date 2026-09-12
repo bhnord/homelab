@@ -33,7 +33,7 @@ services:
       - paperless
       - glance
       - chibi
-#      - tools
+      - tools
       - bullet
       - track
  
