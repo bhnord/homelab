@@ -1,6 +1,6 @@
 services:
   bullet:
-    image: ghcr.io/silverbulletmd/silverbullet
+    image: ghcr.io/silverbulletmd/silverbullet:2.10.0
     container_name: bullet
     restart: unless-stopped
     environment:
