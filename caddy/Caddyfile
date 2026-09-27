@@ -105,3 +105,10 @@
 {$TRACK_SUBDOMAIN}.{$PROXY_HOST}, {$TRACK_SUBDOMAIN}.{$WEB_HOST} {
 	reverse_proxy {$TRACK_HOST}:{$TRACK_PORT}
 }
+
+# =========================================================================
+# Immich
+# =========================================================================
+{$IMMICH_SUBDOMAIN}.{$PROXY_HOST}, {$IMMICH_SUBDOMAIN}.{$WEB_HOST} {
+	reverse_proxy {$IMMICH_HOST}:{$IMMICH_PORT}
+}
