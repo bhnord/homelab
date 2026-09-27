@@ -1,3 +1,7 @@
+#!/bin/bash
+
+echo "===== Restic Backup Started: $(date) ====="
+
 set -a
 source "$HOME/homelab/restic_backup/.env.secrets"
 set +a
