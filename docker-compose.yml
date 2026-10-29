@@ -1,6 +1,6 @@
 ---
 include:
-  - ./actualbudget/docker-compose.yml   # actual - budgeting
+  - ./actualbudget/docker-compose.yml   # budget - budgeting
   - ./mealie/docker-compose.yml         # mealie - recipes
   - ./paperless/docker-compose.yml      # paperless - documents
   - ./glance/docker-compose.yml         # glance - dashboard
@@ -28,7 +28,7 @@ services:
       - "80:80"
       - "443:443"
     depends_on:
-      - actual
+      - budget
       - mealie
       - paperless
       - glance

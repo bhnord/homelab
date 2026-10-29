@@ -9,3 +9,5 @@ ssl/
 
 # don't commit env secrets
 **/.env.secrets
+
+restic_backup/backup.log
